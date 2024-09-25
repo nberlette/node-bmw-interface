@@ -22,18 +22,17 @@ socket  = require('socket');
 update = new (require('update'))();
 
 
-// Render serialport options object
+// Render serial port options object
 function serialOpts(baudRate, parity) {
 	// DBUS+IBUS+KBUS : 9600 8e1
 
 	return {
-		init : {
-			autoOpen : false,
-			rtscts   : config.options.ctsrts_retry[app_intf],
+		autoOpen : false,
+		rtscts   : true,
+		// rtscts   : config.options.ctsrts_retry[app_intf],
 
-			baudRate,
-			parity,
-		},
+		baudRate,
+		parity,
 	};
 } // serialOpts(baudRate, parity)
 
@@ -79,9 +78,9 @@ function loadModules() {
 		}
 
 		case 'dbus' : {
-			intf.baudRate = 9600;
-			intfParity    = 'even';
-			intfType      = 'bmw';
+			intfBaudRate = 9600;
+			intfParity   = 'even';
+			intfType     = 'bmw';
 			break;
 		}
 
@@ -152,7 +151,7 @@ async function init() {
 	// Enable console output
 	config = { console : { output : true } };
 
-	log.msg(`Initializing interface: '${app_intf}'`);
+	log.msg(`Initializing network interface: '${app_intf}'`);
 
 	// Configure term event listeners
 	process.on('exit',    async () => signalTerm('exit'));
@@ -167,7 +166,7 @@ async function init() {
 	await intf.intf.init(); // Open defined interface
 	await socket.init();    // Open socket server
 
-	log.msg(`Initialized interface: '${app_intf}'`);
+	log.msg(`Initialized network interface '${app_intf}'`);
 } // async init()
 
 // FASTEN SEATBELTS
