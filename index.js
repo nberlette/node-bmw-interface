@@ -53,12 +53,12 @@ function loadModules() {
 		config : {
 			debug : process.env.BMWI_DEBUG_PROTOCOL || false,
 
-			msg_length_min : 5,
-			msg_length_max : 60,
+			msgLengthMin : 5,
+			msgLengthMax : 60,
 
-			queue_length_max : 1000,
+			queueLengthMax : 1000,
 
-			error_max : 50,
+			errorMax : 50,
 		},
 
 		proto : null,
