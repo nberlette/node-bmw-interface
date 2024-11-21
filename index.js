@@ -54,7 +54,7 @@ function loadModules() {
 			debug : process.env.BMWI_DEBUG_PROTOCOL || false,
 
 			msgLengthMin : 5,
-			msgLengthMax : 60,
+			msgLengthMax : config.options.msgLengthMax[app_intf],
 
 			queueLengthMax : 1000,
 
@@ -78,24 +78,24 @@ function loadModules() {
 		}
 
 		case 'dbus' : {
+			intfType     = 'bmw';
 			intfBaudRate = 9600;
 			intfParity   = 'even';
-			intfType     = 'bmw';
 			break;
 		}
 
 		case 'ibus' :
 		case 'kbus' : {
+			intfType     = 'bmw';
 			intfBaudRate = 9600;
 			intfParity   = 'even';
-			intfType     = 'bmw';
 			break;
 		}
 
 		case 'isp2' : {
+			intfType     = 'isp2';
 			intfBaudRate = 19200;
 			intfParity   = 'none';
-			intfType     = 'isp2';
 		}
 	}
 
