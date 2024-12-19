@@ -41,24 +41,18 @@ function serialOpts(baudRate, parity) {
 function loadModules() {
 	// Vehicle data bus interface libraries
 	intf = {
-		config : {
-			debug : process.env.BMWI_DEBUG_INTERFACE || false,
-		},
-
 		path : config.intf[app_intf],
 	};
 
 	// Vehicle data bus protocol config
 	proto = {
 		config : {
-			debug : process.env.BMWI_DEBUG_PROTOCOL || false,
-
 			msgLengthMin : 5,
 			msgLengthMax : config.options.msgLengthMax[app_intf],
 
 			queueLengthMax : 1000,
 
-			errorMax : 50,
+			errorMax : 25,
 		},
 
 		proto : null,
