@@ -7,9 +7,8 @@
 		"url": "https://github.com/kmalinich/node-bmw-interface/issues"
 	},
 	"dependencies": {
-		"body-parser": "^2.2.0",
-		"chalk": "4.1.2",
 		"callers-path": "^1.0.5",
+		"chalk": "4.1.2",
 		"defaults-deep": "^0.2.4",
 		"express": "^5.1.0",
 		"json-socket": "^0.3.0",
