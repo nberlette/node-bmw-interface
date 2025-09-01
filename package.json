@@ -8,7 +8,7 @@
 	},
 	"dependencies": {
 		"callers-path": "^1.0.5",
-		"chalk": "4.1.2",
+		"chalk": "5.6.0",
 		"defaults-deep": "^0.2.4",
 		"express": "^5.1.0",
 		"json-socket": "^0.3.0",
@@ -18,8 +18,8 @@
 	},
 	"description": "BMW CANBUS/IBUS/KBUS server",
 	"devDependencies": {
-		"@eslint/js": "^9.33.0",
-		"eslint": "^9.33.0",
+		"@eslint/js": "^9.34.0",
+		"eslint": "^9.34.0",
 		"eslint-plugin-n": "^17.21.3",
 		"eslint-plugin-promise": "^7.2.1"
 	},
@@ -46,7 +46,7 @@
 	"optionalDependencies": {
 		"@serialport/parser-byte-length": "^13.0.0",
 		"serialport": "13.0.0",
-		"socketcan": "^4.0.6"
+		"socketcan": "^4.0.7"
 	},
 	"repository": {
 		"type": "git",
